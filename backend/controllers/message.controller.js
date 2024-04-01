@@ -31,7 +31,7 @@ export const sendMessage = async(req,res)=>{
         // await conversation.save();
         // await newMessage.save();
         // This will run in parallel otimizing the performance
-        await Promisea.all([conversation.save(),newMessage.save()]);
+        await Promise.all([conversation.save(),newMessage.save()]);
 
         res.status(201).json(newMessage);
 
